@@ -1,0 +1,308 @@
+/* Always start with this */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 62.5%; 
+  }
+
+/* general */
+
+
+.container{
+    min-height: calc(100vh - 23.25rem);
+}
+
+.button {
+    min-width: 7rem;
+    height: 3.5rem;
+    background-color: #1a1a1a;
+    color: #fafafa;
+    font-size: 2rem;
+    border: #fafafa solid 2px;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.button:hover{
+    border: black solid 2px;
+    border-radius: 4px;
+    background-color: #fafafa;
+    color: #1a1a1a;
+}
+
+.button:active{
+    border: black solid 2px;
+    border-radius: 4px;
+    background-color: #aaa;
+    color: #111;
+}
+
+
+/*header style*/
+header {
+    width: 100%;
+    background-color: #2a2a2a;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+#web-name{
+    margin: auto 0;
+    margin-left: 2rem;
+}
+
+
+#web-name a{
+    text-decoration: none;
+    font-size: 4rem;
+    color: #fafafa;
+    padding: 2rem;
+}
+#web-name a:hover{
+    color: #cacaca;
+}
+
+/* Nav bar */
+
+nav{
+    color: #fafafa;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+nav ul li{
+    
+    flex-direction: row;
+}
+nav ul li a{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    color: #fafafa;
+    padding: 2rem;
+}
+nav ul li a:hover{
+    background-color: #111;
+}
+
+/* Burger */
+.dropdown{
+    display:none;
+}
+
+#about-me, #projects{
+    display:block;
+}
+
+
+
+/* ---------------------Body-----------------------------*/
+
+/* first-big-text */
+
+.first-big-text{
+    margin: auto;
+    margin-top: 12rem;
+    font-size: 5rem;
+    text-align: center;
+    width: 90%;
+
+}
+/* Image grid container */
+
+.img-grid-container {
+    margin: auto;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 10px;
+    background-image: url('/static/img/sunset.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+.img-grid-container > div {
+    text-align: center;
+    font-size: 30px;
+    /*
+    background-color: rgba(255, 255, 255, 0.8);
+    border: solid 1px black;
+    */
+  }
+
+
+.wall-e {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    padding: 0;
+    display: flex ;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+.wall-e img{
+    width: 60%;
+
+}
+
+.boot {
+    color: black;
+
+}
+
+.boot img{
+    width:40%;
+}
+
+/* Look projects */
+.big-text{
+    width: 90%;
+    margin: auto;
+    margin-top: 5rem;
+    font-size: 4rem;
+    text-align: center;
+}
+.big-text span{
+    font-size: 4rem;
+}
+
+/*----------------Footer---------------------*/
+
+footer {
+    width: 100%;
+    height: auto;
+    margin-top: 5rem;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+  }
+
+footer div{
+    font-size: 2rem;
+    color: #fafafa;
+    margin: auto 0;
+    padding: 2rem 4rem;
+}
+
+footer a{
+    font-size: 2rem;
+    color: #fafafa;
+    text-decoration: none;
+}
+
+footer div:hover{
+    background-color: #111;
+}
+
+
+/*---------------------------Projects-----------------------------------*/
+
+.projects-container{
+    margin-top: 2rem;
+    width: 100%;
+    min-height: calc(100vh - 37rem);
+    font-size: 5rem;
+}
+
+.projects{
+    width: 80%;
+    margin: auto;
+}
+
+.projects ul{
+    list-style-type:disc;
+    font-size: 3rem;
+
+}
+.projects ul li a{
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: #222;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.projects ul li a:hover{
+    background-color: #2a2a2a;
+    color: #fafafa;
+
+}
+
+/* Linear regression */
+/*1predict 2.1prediction/2.2form 2.2.1points 2.2.2point 2.2.3point-n*/
+
+.predict{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.predict form{
+
+    background-color: white
+
+}
+
+.prediction{
+    background-color: white;
+}
+
+
+.points p{
+    font-size: 2rem;
+}
+
+.points label{
+    font-size: 1.5rem;
+}
+
+.point{
+    display: flex;
+    flex-direction: row;
+}
+
+.point input{
+    min-height: 3rem;
+    width: 5rem;
+    background-color: #181818;
+    color: #fafafa;
+    border: 2px solid;
+    border-radius: 4px;
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+#lr-form-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lr-equation{
+    margin: auto;
+    margin-top: 0.5rem;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.lr-plot img{
+    width: 40rem;
+    margin: 3rem;
+}
+
+

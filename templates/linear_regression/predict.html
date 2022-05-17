@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{# Site title #}
+{% block head_content %}
+    <title>Linear regression</title>
+{% endblock  %}
+
+{% block container %}
+
+<div class="container">
+    <div class="first-big-text">
+        Linear Regression
+    </div>
+    <div class="predict">
+        <form action="{% url 'linear-regression:predict' %}">
+            <!--{% csrf_token %} Is not needed because is a GET-->
+            
+            <div class="points">
+                <p>Point 1</p>
+                <div class="point">
+                    <div class="point-x">
+                        <input type="text" name='x1' required>
+                        <label for="x1">x1</label>
+                    </div>
+                    <div class="point-y">
+                        <input type="text" name='y1' required>
+                        <label for="y1">y1</label>
+                    </div>
+                </div>
+            </div>
+            <div class="points">
+                <p>Point 2</p>
+                <div class="point">
+                    <div class="point-x">
+                        <input type="text" name='x2' required>
+                        <label for="x2">x2</label>
+                    </div>
+                    <div class="point-y">
+                        <input type="text" name='y2' required>
+                        <label for="y2">y2</label>
+                    </div>
+                </div>
+            </div>
+            <div class="points">
+                <p>Point 3</p>
+                <div class="point">
+                    <div class="point-x">
+                        <input type="text" name='x3' required>
+                        <label for="x3">x3</label>
+                    </div>
+                    <div class="point-y">
+                        <input type="text" name='y3' required>
+                        <label for="y3">y3</label>
+                    </div>
+                </div>
+            </div>
+            <div class="points">
+                <p>Point 4</p>
+                <div class="point">
+                    <div class="point-x">
+                        <input type="text" name='x4' required>
+                        <label for="x4">x4</label>
+                    </div>
+                    <div class="point-y">
+                        <input type="text" name='y4' required>
+                        <label for="y4">y4</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div id='lr-form-button'>
+                <input type="submit" class="button" value='Get Predictions'>
+            </div>
+            
+
+        </form>
+
+        <div class="prediction">
+            {% if prediction %}
+                <div class='lr-equation'>{{prediction}}</div>
+                <div class="lr-plot">
+                    <img src="data:image/png;base64, {{plot|safe}}" alt="" id="img">
+                </div>
+            {% endif %}
+        </div>
+        
+    </div>
+    
+
+    
+
+</div>
+
+{% endblock  %}
+

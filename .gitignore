@@ -1,0 +1,7 @@
+/venv_name/
+/static/img
+*.pyc
+*.pyo
+*/__pycache__/
+.env
+*.ipynb

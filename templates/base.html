@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--To change title name on each page-->
+    {% block head_content %}{% endblock  %}
+    <!--Base title-->
+    <title>My Web App</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gonzalo Giampaolo ML Repo">
+    <meta name="robots" content="index,follow">
+
+    {% load static %}
+    <!--For reponsive design-->
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tablet.css' %}" media="screen and (min-width: 575px)">
+    <link rel="stylesheet" href="{% static 'css/laptop.css' %}" media="screen and (min-width: 1000px)">
+
+    {# icon image #}
+    {#<link rel="shortcut icon" type="image/png" href="{% static 'images/logo.png' %}"/>#}
+    
+</head>
+<body>
+    {% include "header.html"%}
+
+    {% block container %}
+    
+    {% endblock  %}
+    
+    {% include "footer.html" %}
+
+</body>
+</html>

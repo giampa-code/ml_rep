@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{# Site title #}
+{% block head_content %}
+    <title>My ML Rep</title>
+{% endblock  %}
+
+{% block container %}
+
+<div>
+    <div class="first-big-text">
+        Welcome to my ML projects. Click on any of them for more detail.
+    </div>
+    <div class="projects-container">
+        <div class="projects">
+            <ul>
+                <li><a href="{% url 'linear-regression:predict' %}">Linear Regression</a></li>
+                <li><a href="#">Project 2</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
+

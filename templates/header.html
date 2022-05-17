@@ -1,0 +1,18 @@
+{% load static %}
+<header>
+    <div id="web-name"><a href="{% url 'home' %}">Gonzalo Giampaolo</a></div>
+    <nav>
+        <ul>
+            <li id="projects"><a href="{% url 'projects' %}">Projects</a></li>
+            <li id="about-me"><a href="https://gonzalogiampaolo.com">About me</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">≡</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'projects' %}">Projects</a>
+                    <a href="https://gonzalogiampaolo.com">About me</a>
+                </div>
+            </li>
+            
+        </ul>
+    </nav>
+</header>  
