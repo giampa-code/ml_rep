@@ -30,6 +30,25 @@ sample_m = {'peso':97.5, 'talla':169, 'per_brazo_rel':38,
     
 # predictions functions per sex
 
+def get_data(request):
+   """
+   Extract the data from the request.
+   """
+
+   keys = ['sexo','peso', 'talla', 'per_brazo_rel', 
+      'per_brazo_ten', 'per_antebrazo','per_torax', 
+      'per_cintura', 'per_cadera', 'per_muslo_max',
+      'per_muslo_medial', 'per_pantorrilla']
+
+   sample = dict()
+   for key in keys:
+      if key == 'sexo':
+         sample[key] = request.GET[key]
+      else:
+         sample[key] = float(request.GET[key])
+
+   return sample
+
 def predict_male(sample):
    """
    Receive a dict with the following keys: 
@@ -41,9 +60,14 @@ def predict_male(sample):
    Return a dict of masa residual, piel, osea, adiposa y muscular. 
    """
    
+   # remove key sexo
+   sample.pop('sexo',None)
+
+   # scale and reshape data
    sample_scaled = {k:utils.z_scale(k,'m',v) for (k,v) in zip(sample.keys(),sample.values())}
    sample_scaled = np.array(list(sample_scaled.values())).reshape(1, -1)
 
+   # predict
    masa_residual = model_residual_m.predict(sample_scaled)
    masa_piel = model_piel_m.predict(sample_scaled)
    masa_osea = model_osea_m.predict(sample_scaled)
@@ -66,9 +90,14 @@ def predict_female(sample):
    Return a dict of masa residual, piel, osea, adiposa y muscular. 
    """
    
+   # remove key sexo
+   sample.pop('sexo',None)
+
+   # scale and reshape 
    sample_scaled = {k:utils.z_scale(k,'m',v) for (k,v) in zip(sample.keys(),sample.values())}
    sample_scaled = np.array(list(sample_scaled.values())).reshape(1, -1)
 
+   # predicts
    masa_residual = model_residual_f.predict(sample_scaled)
    masa_piel = model_piel_f.predict(sample_scaled)
    masa_osea = model_osea_f.predict(sample_scaled)
@@ -80,5 +109,44 @@ def predict_female(sample):
                }
    return masas_dict
 
-if __name__ == '__main__':
-    print(predict_male(sample_m))
+
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+import uuid, base64
+from io import BytesIO
+from matplotlib import pyplot as plt
+
+
+# funciones sacadas de internet para plotear 
+def get_graph():
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png')
+    buffer.seek(0)
+    image_png = buffer.getvalue()
+    graph = base64.b64encode(image_png)
+    graph = graph.decode('utf-8')
+    buffer.close()
+    return graph
+
+def get_plot(masas):
+
+   osea = masas['osea']
+   piel = masas['piel']
+   muscular = masas['muscular']
+   adiposa = masas['adiposa']
+   residual = masas['residual']
+
+    
+    
+   
+   plt.switch_backend('AGG')
+
+   figure = plt.figure(figsize=(5,5))
+   plt.pie(masas.values(), labels=masas.keys(), autopct='%1.1f%%')
+   plt.title('Body mass')
+   #plt.plot(xs,ys,'g')
+   plt.legend()
+
+   plt.tight_layout()
+   plot = get_graph()
+   return plot

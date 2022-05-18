@@ -333,3 +333,45 @@ footer div:hover{
 }
 
 
+/* Antropo  */
+/* 1antropo 2.1prediction 2.2features 2.2.3feature  */
+
+#antropo-form-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.antropo{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.features p{
+    font-size: 2rem;
+}
+
+.features label{
+    font-size: 1.75rem;
+}
+
+.feature{
+    margin: 1 rem;
+}
+
+.feature input{
+    min-height: 3rem;
+    width: 5rem;
+    background-color: #181818;
+    color: #fafafa;
+    border: 2px solid;
+    border-radius: 4px;
+    margin: 1rem;
+    font-size: 2rem;
+}

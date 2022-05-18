@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{# Site title #}
+{% block head_content %}
+    <title>Linear regression</title>
+{% endblock  %}
+
+{% block container %}
+
+<div class="container">
+    <div class="first-big-text">
+        Body mass estimator
+    </div>
+    <div class="antropo">
+        <form action="{% url 'antropo:predict' %}">
+            <!--{% csrf_token %} Is not needed because is a GET-->
+            
+            <div class="features">
+                <div class='subtitle'>Peso y talla</div>
+
+                <div class="feature">
+                    <input type="text" name='sexo' required>
+                    <label for="sexo">Sexo</label>
+                </div>
+                
+                <div class="feature">
+                    <input type="text" name='peso' required>
+                    <label for="peso">Peso</label>
+                </div>
+                <div class="feature">
+                    <input type="text" name='talla' required>
+                    <label for="talla">Talla</label>
+                </div>
+                <div class='subtitle'>Perimetros</div>
+
+                <div class="feature">
+                    <input type="text" name='per_brazo_rel' required>
+                    <label for="per_brazo_rel">Brazo relajado</label>
+                </div>
+                <div class="feature">
+                    <input type="text" name='per_brazo_ten' required>
+                    <label for="per_brazo_ten">Brazo tensionado</label>
+                </div>
+
+                <div class="feature">
+                    <input type="text" name='per_antebrazo' required>
+                    <label for="per_antebrazo">Antebrazo</label>
+                </div>
+
+                <div class="feature">
+                    <input type="text" name='per_torax' required>
+                    <label for="per_torax">Tórax</label>
+                </div>
+                <div class="feature">
+                    <input type="text" name='per_cintura' required>
+                    <label for="per_cintura">Cintura</label>
+                </div>
+                <div class="feature">
+                    <input type="text" name='per_cadera' required>
+                    <label for="per_cadera">Cadera</label>
+                </div>
+                <div class="feature">
+                    <input type="text" name='per_muslo_max' required>
+                    <label for="per_muslo_max">Muslo_max</label>
+                </div>
+                <div class="feature">
+                    <input type="text" name='per_muslo_medial' required>
+                    <label for="per_muslo_medial">Muslo_medial</label>
+                </div>
+                <div class="feature">
+                    <input type="text" name='per_pantorrilla' required>
+                    <label for="per_pantorrilla">Pantorrilla</label>
+                </div>
+
+            </div>
+            
+            
+            <div id='antropo-form-button'>
+                <input type="submit" class="button" value='Get Predictions'>
+            </div>
+            
+
+        </form>
+
+        <div class="prediction">
+            {% if plot %}
+            <div class="antropo-plot">
+                <img src="data:image/png;base64, {{plot|safe}}" alt="" id="img">
+            </div>
+            {% endif %}
+        </div>
+        
+    </div>
+    
+
+    
+
+</div>
+
+{% endblock  %}
+

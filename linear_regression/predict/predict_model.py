@@ -35,7 +35,8 @@ def get_equation(request):
 
     return equation
 
-
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg
 import uuid, base64
 from io import BytesIO
 from matplotlib import pyplot

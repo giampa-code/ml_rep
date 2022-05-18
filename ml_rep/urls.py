@@ -28,5 +28,8 @@ urlpatterns = [
     path('projects/',local_views.ProjectsPageView.as_view(), name='projects'),
 
     # Linear regression
-    path('linear-regression/',include(('linear_regression.urls','linear_regression'),namespace='linear-regression'))
+    path('linear-regression/',include(('linear_regression.urls','linear_regression'),namespace='linear-regression')),
+
+    # Antropometria
+    path('antropo/',include(('antropo.urls','antropo'),namespace='antropo')),
 ]
