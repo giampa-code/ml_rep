@@ -10,18 +10,18 @@ dirname = os.path.dirname(__file__)
 
 ''
 # load female models
-model_residual_f = joblib.load(os.path.join(dirname,'antropo/data/trained/f/masa_residual_f.sav'))
-model_piel_f = joblib.load(os.path.join(dirname,'antropo/data/trained/f/masa_piel_f.sav'))
-model_osea_f = joblib.load(os.path.join(dirname,'antropo/data/trained/f/masa_osea_f.sav'))
-model_adiposa_f = joblib.load(os.path.join(dirname,'antropo/data/trained/f/masa_adiposa_f.sav'))
-model_muscular_f = joblib.load(os.path.join(dirname,'antropo/data/trained/f/masa_muscular_f.sav'))
+model_residual_f = joblib.load(os.path.join(dirname,'../data/trained/f/masa_residual_f.sav'))
+model_piel_f = joblib.load(os.path.join(dirname,'../data/trained/f/masa_piel_f.sav'))
+model_osea_f = joblib.load(os.path.join(dirname,'../data/trained/f/masa_osea_f.sav'))
+model_adiposa_f = joblib.load(os.path.join(dirname,'../data/trained/f/masa_adiposa_f.sav'))
+model_muscular_f = joblib.load(os.path.join(dirname,'../data/trained/f/masa_muscular_f.sav'))
 
 # load male models
-model_residual_m = joblib.load(os.path.join(dirname,'antropo/data/trained/m/masa_residual_m.sav'))
-model_piel_m = joblib.load(os.path.join(dirname,'antropo/data/trained/m/masa_piel_m.sav'))
-model_osea_m = joblib.load(os.path.join(dirname,'antropo/data/trained/m/masa_osea_m.sav'))
-model_adiposa_m = joblib.load(os.path.join(dirname,'antropo/data/trained/m/masa_adiposa_m.sav'))
-model_muscular_m = joblib.load(os.path.join(dirname,'antropo/data/trained/m/masa_muscular_m.sav'))
+model_residual_m = joblib.load(os.path.join(dirname,'../data/trained/m/masa_residual_m.sav'))
+model_piel_m = joblib.load(os.path.join(dirname,'../data/trained/m/masa_piel_m.sav'))
+model_osea_m = joblib.load(os.path.join(dirname,'../data/trained/m/masa_osea_m.sav'))
+model_adiposa_m = joblib.load(os.path.join(dirname,'../data/trained/m/masa_adiposa_m.sav'))
+model_muscular_m = joblib.load(os.path.join(dirname,'../data/trained/m/masa_muscular_m.sav'))
 
 
 
