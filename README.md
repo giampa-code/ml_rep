@@ -14,3 +14,4 @@ v0.2 = - Added the .env file, web app was failing without it.
 v0.2.1 =
        - Add relative paths to antropo
        - Add input error handling in antropo and linear regression
+       - Adding images to git
