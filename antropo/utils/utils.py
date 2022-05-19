@@ -1,4 +1,5 @@
 import json
+import os
 
 # functions
 ## load json
@@ -13,11 +14,13 @@ def load_json(path):
     return data
 
 
+dirname = os.path.dirname(__file__)
+
 # loading mean and std json for scaling 
-mean_f = load_json('antropo/data/mean_f.json')
-std_f = load_json('antropo/data/std_f.json')
-mean_m = load_json('antropo/data/mean_m.json')
-std_m = load_json('antropo/data/std_m.json')
+mean_f = load_json(os.path.join(dirname, '../data/mean_f.json'))
+std_f = load_json(os.path.join(dirname, '../data/std_f.json'))
+mean_m = load_json(os.path.join(dirname, '../data/mean_m.json'))
+std_m = load_json(os.path.join(dirname, '../data/std_m.json'))
 
 ## z-scale functions
 def z_scale(variable, sex, value):

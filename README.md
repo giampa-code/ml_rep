@@ -11,3 +11,6 @@ v0.0 = Basic html front end. Starting first apps/Ml projects
 v0.1 = Linear regression model finished and added
 v0.2 = - Added the .env file, web app was failing without it.
        - Body mas estimator, first version.
+v0.2.1 =
+       - Add relative paths to antropo
+       - Add input error handling in antropo and linear regression

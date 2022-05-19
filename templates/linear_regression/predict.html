@@ -84,6 +84,12 @@
                     <img src="data:image/png;base64, {{plot|safe}}" alt="" id="img">
                 </div>
             {% endif %}
+            {% if error %}
+            <div class="big-text">
+                There was an error in the input data.
+            </div>
+            {% endif %}
+
         </div>
         
     </div>

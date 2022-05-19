@@ -21,19 +21,21 @@
                 <div class='subtitle'>Peso y talla</div>
 
                 <div class="feature">
-                    <input type="text" name='sexo' required>
-                    <label for="sexo">Sexo</label>
+                    <input type="radio" id="f" name="sexo" value="f" required>
+                    <label for="f">f</label>
+                    <input type="radio" id="m" name="sexo" value="m" required>
+                    <label for="m">m</label>
                 </div>
                 
                 <div class="feature">
                     <input type="text" name='peso' required>
-                    <label for="peso">Peso</label>
+                    <label for="peso">Peso [kg]</label>
                 </div>
                 <div class="feature">
                     <input type="text" name='talla' required>
-                    <label for="talla">Talla</label>
+                    <label for="talla">Talla [cm]</label>
                 </div>
-                <div class='subtitle'>Perimetros</div>
+                <div class='subtitle'>Perimetros <span style="font-size: 1.5rem">[cm]</span></div>
 
                 <div class="feature">
                     <input type="text" name='per_brazo_rel' required>
@@ -90,6 +92,12 @@
                 <img src="data:image/png;base64, {{plot|safe}}" alt="" id="img">
             </div>
             {% endif %}
+            {% if error %}
+            <div class="big-text">
+                There was an error in the input data.
+            </div>
+            {% endif %}
+
         </div>
         
     </div>

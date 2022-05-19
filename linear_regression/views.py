@@ -9,6 +9,12 @@ def lr_home(request):
     if len(request.GET.keys()) == 0:
         return render(request,'linear_regression/predict.html')
     else:
-        prediction = predict_model.get_equation(request)
-        plot = predict_model.get_plot(request)
-        return render(request,'linear_regression/predict.html', {'prediction':prediction, 'plot':plot})
+        try:
+            prediction = predict_model.get_equation(request)
+            plot = predict_model.get_plot(request)
+            error = False
+        except:
+            error = True
+            plot = None
+            prediction = None
+        return render(request,'linear_regression/predict.html', {'prediction':prediction, 'plot':plot, 'error':error})
